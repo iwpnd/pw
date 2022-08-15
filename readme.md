@@ -46,7 +46,7 @@ MIT
 
 ## Acknowledgement
 
-inspired by @briandowns pass that bubbled up in my timeline and I used as foundation to play with strings and go a little.
+inspired by [@briandowns](https://github.com/briandowns) pass that bubbled up in my timeline and I used as foundation to play with strings and go a little.
 
 ## Maintainer
 
