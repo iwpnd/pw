@@ -1,0 +1,13 @@
+repos:
+- repo: git://github.com/dnephin/pre-commit-golang
+  rev: v0.4.0
+  hooks:
+    - id: go-fmt
+    - id: go-vet
+    - id: go-lint
+    - id: go-imports
+    - id: go-mod-tidy
+- repo: https://github.com/jorisroovers/gitlint
+  rev: v0.15.1
+  hooks:
+    - id: gitlint

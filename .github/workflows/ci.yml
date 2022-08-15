@@ -1,0 +1,28 @@
+name: ci
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup Go
+      uses: actions/setup-go@v3
+       
+    - name: build
+      run: go build . 
+      
+    - name: lint
+      uses: golangci/golangci-lint-action@v2.5.2
+      with:
+        version: latest
+    
+    - name: test
+      run: go test -v ./...
