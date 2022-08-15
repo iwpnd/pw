@@ -1,8 +1,8 @@
 package pw
 
 import (
-	"math/rand"
-	"time"
+	"crypto/rand"
+	"math/big"
 )
 
 // UpperChars ...
@@ -24,14 +24,12 @@ const AllChars = UpperChars + LowerChars + SpecialChars + NumberChars
 type Option func() string
 
 func randomFromChars(length int, chars string) string {
-	rand.Seed(time.Now().UnixNano())
-	min := 0
 	max := len(chars) - 1
 
 	p := ""
 	for i := 0; i < length; i++ {
-		n := min + rand.Intn(max-min+1)
-		p = p + string(chars[n])
+		n, _ := rand.Int(rand.Reader, big.NewInt(int64(max)))
+		p = p + string(chars[n.Int64()])
 	}
 
 	return p
