@@ -5,7 +5,8 @@ before:
 builds:
   - env:
       - CGO_ENABLED=0
-    main: ./cmd/cli
+    main: ./cmd
+    binary: pw
     goos:
       - linux
       - windows
