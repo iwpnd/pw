@@ -23,7 +23,7 @@ jobs:
         uses: goreleaser/goreleaser-action@master
         with:
           version: latest
-          args: release --rm-dist
+          args: release --rm-dist --config .goreleaser.yaml
           workdir: ./cmd
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
