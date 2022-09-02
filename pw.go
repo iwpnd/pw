@@ -25,8 +25,8 @@ type Option func() string
 
 func randomFromChars(length int, chars string) string {
 	max := len(chars) - 1
-
 	p := ""
+
 	for i := 0; i < length; i++ {
 		n, _ := rand.Int(rand.Reader, big.NewInt(int64(max)))
 		p = p + string(chars[n.Int64()])
