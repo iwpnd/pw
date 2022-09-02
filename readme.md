@@ -3,9 +3,11 @@
 pw is a minimal password generator for me lazy fk
 
 ## Installation
+### cli
 
 ```
 go install github.com/iwpnd/pw/cmd/pw@latest
+```
 
 ```bash
 ➜ pw create --help
@@ -23,6 +25,8 @@ OPTIONS:
    --no-upper, --nu          password contains NO uppercase characters (default: false)
 ```
 
+### package
+```
 go get -u github.com/iwpnd/pw
 ```
 
