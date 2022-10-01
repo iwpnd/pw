@@ -17,7 +17,7 @@ jobs:
           fetch-depth: 0 
 
       - name: setup
-        uses: actions/setup-go@v2
+        uses: actions/setup-go@v3
 
       - name: release
         uses: goreleaser/goreleaser-action@master
