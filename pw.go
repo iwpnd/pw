@@ -24,7 +24,8 @@ const AllChars = UpperChars + LowerChars + SpecialChars + NumberChars
 type Option func() string
 
 func randomFromChars(length int, chars string) string {
-	max := len(chars) - 1
+	// rand.Int returns value in [0, max)
+	max := len(chars)
 	p := ""
 
 	for i := 0; i < length; i++ {
