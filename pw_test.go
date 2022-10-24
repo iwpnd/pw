@@ -15,6 +15,16 @@ func contains(chars string, password string) bool {
 	return false
 }
 
+// containsAll checks if password contains all chars in the charset
+func containsAll(password, charset string) bool {
+	for _, char := range strings.Split(charset, "") {
+		if !strings.Contains(password, char) {
+			return false
+		}
+	}
+	return true
+}
+
 func TestDefaultNewPassword(t *testing.T) {
 	l := 100
 	p := NewPassword(l)
@@ -137,5 +147,13 @@ func TestSpecialCharOnlyPassword(t *testing.T) {
 
 	if contains(p, UpperChars) {
 		t.Errorf("should not contain upper characters")
+	}
+}
+
+func TestDistribution(t *testing.T) {
+	const charset = "12"
+	pass := randomFromChars(100, charset)
+	if !containsAll(pass, charset) {
+		t.Errorf("should contain all the chars from charset %q\n", charset)
 	}
 }
