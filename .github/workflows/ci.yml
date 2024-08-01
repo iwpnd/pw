@@ -20,7 +20,7 @@ jobs:
       run: go build . 
       
     - name: lint
-      uses: golangci/golangci-lint-action@v6.0.1
+      uses: golangci/golangci-lint-action@v6.1.0
       with:
         version: latest
     
